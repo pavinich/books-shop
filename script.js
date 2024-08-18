@@ -188,7 +188,6 @@ sortControl.addEventListener("change", (event) => {
 
 
 const searchInput = document.querySelector("#search-input");
-const searchButton = document.querySelector("#search-btn");
 
 function applySearch() {
   const searchString = searchInput.value.trim().toLowerCase();
@@ -204,9 +203,4 @@ function applySearch() {
   renderItems(currentState);
 }
 
-
-searchInput.addEventListener("keydown", function(event) {
-  if (event.key == 'Enter') {
-    applySearch();
-  }
-});
+searchInput.addEventListener("search", applySearch);
